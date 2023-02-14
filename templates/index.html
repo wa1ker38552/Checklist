@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Checklist</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/product-sans">
+    <link rel="icon" href="static/assets/check-favicon.png">
+    <script src="/static/script.js"></script>
+  </head>
+  <body id="body">
+    <div class="container">
+      <div class="task-container" id="taskContainer">
+        <div class="subtitle" id="subtitle">Active Tasks</div>
+        <div class="task-type-container">
+          <button class="change-type-button selected" id="0" onclick="setView(0)">Tasks</button>
+          <button class="change-type-button" id="1" onclick="setView(1)">Starred</button>
+          <button class="change-type-button" id="2" onclick="setView(2)">Completed</button>
+        </div>
+        <div class="active-task-container" id="activeTaskContainer">
+          <!-- Rendered by JS -->
+          <div class="sync-container" id="pending">
+            <img class="sync-icon" src="static/assets/sync-icon.png">
+          </div>
+        </div>
+        <div class="task-creation-container hidden" id="createTask">
+          <div class="task-creation">
+            <div class="task-color">
+              <button class="color blue" onclick="changeColor()" id="taskColor"></button>
+            </div>
+            <input class="task-input" id="taskName" type="text" placeholder="Task name" autocomplete="off" spellcheck="false">
+          </div>
+          <button class="create-button" onclick="createTask()">Create Task</button>
+          <button class="create-button cancel" onclick="closeCreateTask()">Cancel</button>
+        </div>
+        <button class="create-button absolute-button" onclick="showCreateTask()" id="showCreateTask">Create Task</button>
+      </div>
+    </div>
+    <button class="birthday-button" onclick="surprise()">🎂</button>
+  </body>
+</html>
